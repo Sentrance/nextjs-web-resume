@@ -31,6 +31,7 @@ interface HeroActionItem {
   href: string;
   text: string;
   primary?: boolean;
+  target?: string;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
@@ -121,10 +122,7 @@ export const ContactType = {
   Phone: 'Phone',
   Location: 'Location',
   Github: 'Github',
-  LinkedIn: 'LinkedIn',
-  Facebook: 'Facebook',
-  Twitter: 'Twitter',
-  Instagram: 'Instagram',
+  LinkedIn: 'LinkedIn'
 } as const;
 
 export type ContactType = (typeof ContactType)[keyof typeof ContactType];

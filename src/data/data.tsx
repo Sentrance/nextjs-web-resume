@@ -1,42 +1,23 @@
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
-  BuildingOffice2Icon,
   CalendarIcon,
-  FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import heroImage from '../images/kelly-sikkema-WTCh36XETTQ-unsplash.jpg';
 import profilepic from '../images/profilepic.jpg';
-import testimonialImage from '../images/testimonial.webp';
 import {
   About,
   ContactSection,
   ContactType,
   Hero,
   HomepageMeta,
-  PortfolioItem,
   SkillGroup,
   Social,
-  TestimonialSection,
   TimelineItem,
 } from './dataDef';
 
@@ -44,8 +25,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Pierre Peixoto web resume',
+  description: "Web resume for Pierre Peixoto",
 };
 
 /**
@@ -58,8 +39,7 @@ export const SectionId = {
   Portfolio: 'portfolio',
   Resume: 'resume',
   Skills: 'skills',
-  Stats: 'stats',
-  Testimonials: 'testimonials',
+  Stats: 'stats'
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -69,31 +49,30 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `Pierre Peixoto`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        Ingénieur <strong className="text-stone-100">DevOps</strong> à <strong className="text-stone-100">forte polyvalence</strong> technique vivant actuellement sur Paris.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        Bilingue en anglais après plus de deux ans passée en Corée du Sud, j'adore voyager.
+        Sur mon temps libre je développe de petits projets personnels.
+        Sur  mon temps libre j'adore lire des manwha, les jeux-vidéos et sociabiliser.
       </p>
     </>
   ),
   actions: [
     {
       href: '/assets/resume.pdf',
-      text: 'Resume',
+      text: 'Voir mon C.V',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
     {
-      href: `#${SectionId.Contact}`,
-      text: 'Contact',
+      href: `https://www.linkedin.com/in/pierrepeixoto/`,
+      text: 'Me contacter',
+      target: "_blank",
       primary: false,
     },
   ],
@@ -104,16 +83,13 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `Vrai passionné de code, ayant dès mon plus jeune âge été impliqué dans du game-design et du développement 
+  de serveurs de jeux. J'aime également voyager et ai vécu de nombreuses années à l'étranger.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Localisation', text: 'Paris', Icon: MapIcon},
+    {label: 'Age', text: '28', Icon: CalendarIcon},
+    {label: 'Intérêts', text: 'Voyages, Manwha, Homelab, Jeux-vidéos', Icon: SparklesIcon},
+    {label: 'Etudes', text: 'Epitech Paris', Icon: AcademicCapIcon}
   ],
 };
 
@@ -122,144 +98,112 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Langues',
     skills: [
       {
-        name: 'English',
+        name: 'Anglais (bilingue)',
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
+        name: 'Français (natif)',
+        level: 10,
       },
       {
-        name: 'Spanish',
-        level: 3,
-      },
-    ],
-  },
-  {
-    name: 'Frontend development',
-    skills: [
-      {
-        name: 'React',
-        level: 9,
-      },
-      {
-        name: 'Typescript',
+        name: 'Portugais (professionnel)',
         level: 7,
       },
       {
-        name: 'GraphQL',
-        level: 6,
-      },
-    ],
-  },
-  {
-    name: 'Backend development',
-    skills: [
-      {
-        name: 'Node.js',
-        level: 8,
+        name: 'Espagnol (professionnel)',
+        level: 7,
       },
       {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
+        name: 'Coréen (débutant)',
         level: 3,
       },
     ],
   },
-];
-
-/**
- * Portfolio section
- */
-export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage1,
+    name: 'DevOps / CloudOps',
+    skills: [
+      {
+        name: 'Kubernetes',
+        level: 9,
+      },
+      {
+        name: 'Docker',
+        level: 9,
+      },
+      {
+        name: 'Terraform',
+        level: 8,
+      },
+      {
+        name: 'Helm',
+        level: 8,
+      },
+      {
+        name: 'ArgoCD / FluxCD',
+        level: 8,
+      },
+      {
+        name: 'AWS / GCP / Azure',
+        level: 7,
+      },
+      {
+        name: 'CI/CD (Jenkins, GitLab, Bamboo)',
+        level: 8,
+      },
+    ],
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage2,
+    name: 'Développement',
+    skills: [
+      {
+        name: 'Java',
+        level: 8,
+      },
+      {
+        name: 'Python',
+        level: 7,
+      },
+      {
+        name: 'C / C++ / C#',
+        level: 7,
+      },
+      {
+        name: 'React.js / Node.js',
+        level: 8,
+      },
+      {
+        name: 'GraphQL / NoSQL',
+        level: 7,
+      },
+      {
+        name: 'Elixir',
+        level: 5,
+      },
+    ],
   },
   {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
-  },
-  {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage4,
-  },
-  {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
+    name: 'Compétences sociales',
+    skills: [
+      {
+        name: 'Gestion de projet',
+        level: 8,
+      },
+      {
+        name: 'Méthodologie agile',
+        level: 9,
+      },
+      {
+        name: 'Parler en public',
+        level: 7,
+      },
+      {
+        name: 'Assistance client',
+        level: 8,
+      },
+    ],
   },
 ];
 
@@ -268,68 +212,104 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2015 - 2020',
+    location: 'Epitech - Paris',
+    title: 'Master 2 Expert des technologies de l\'information',
+    content: <p>Formation d'expert en technologies de l'information avec un focus sur le développement logiciel, la gestion de projet et l'innovation numérique.</p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2018 - 2019',
+    location: 'Keimyung University - Daegu (Corée du Sud)',
+    title: 'Jeu vidéo avancé et développement mobile',
+    content: <p>Spécialisation en développement de jeux vidéo et d'applications mobiles, avec une immersion culturelle en Corée du Sud.</p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'Mars 2025 - Mai 2025',
+    location: 'Factory',
+    title: 'Consultant DevOps & CloudOps',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Audit puis transition d'une infrastructure hybride On-Premise et SaaS vers microsoft Azure. Optimisation du code
+        et bonne pratiques. Mise en place de pipelines CI/CD. Migration de bases de données PostgresSQL vers Azure DB.
+        Migration du code utilisant le package supabase vers des hooks utilisant des appels SQL. Mise en place d'une
+        authentification OAuth Azure. Optimisation de code et mise à la norme.
+        Formation des équipes sur l'utilisation des pipelines, de
+        terraform, d'Azure, de Git et des bonnes pratiques de code.
+        <br />
+        <br />
+        <strong>Environnement technique:</strong> Microsoft Azure, Terraform, Next.js, PostgresSQL, Github actions.
       </p>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'Octobre 2024 - Décembre 2024',
+    location: 'Flatcube SL',
+    title: 'Consultant DevOps',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Audit pour la création d'un cluster dédié Kubernetes. Transition de serveurs déployés sur des machines dédiées via Docker vers une infrastructure K8s. Mise en place du déploiement continu des serveurs de jeux, création d'alertes et d'une documentation complète.
+        <br />
+        <br />
+        <strong>Environnement technique:</strong> Kubernetes, Helm, Ansible, Docker, Git, FluxCD
+      </p>
+    ),
+  },
+  {
+    date: 'Avril 2023 - Mai 2024',
+    location: 'Digazu',
+    title: 'Ingénieur DevOps',
+    content: (
+      <p>
+        Implémentation et maintenance de pipelines CI/CD pour automatiser les processus de build, de test et de déploiement. Automatisation du provisionnement et configuration des serveurs. Orchestration de conteneurs avec Kubernetes. Identification et résolution des goulots d'étranglement de performances au niveau de l'application et de l'infrastructure.
+        <br />
+        <br />
+        <strong>Environnement technique:</strong> Kubernetes, Terraform, Helm, ArgoCD, AWS, Docker, Gitlab, Git, CI/CD, GCP, Elixir, Java, Python
+      </p>
+    ),
+  },
+  {
+    date: 'Février 2022 - Avril 2023',
+    location: 'Aisin Europe',
+    title: 'Ingénieur DevOps',
+    content: (
+      <p>
+        Accompagnement de l'équipe dans l'application des bonnes pratiques cloud. Migration des applications locales vers AWS. Création d'outils pour les développeurs. Déploiement d'un système d'autorisation pour les applications Kubernetes. Standardisation d'un système de gestion de versions personnalisé. Collecte de métriques et de logs via Prometheus et Grafana.
+        <br />
+        <br />
+        <strong>Environnement technique:</strong> AWS, Kubernetes, Terraform, Helm, ArgoCD, Bitbucket, pipelines Bamboo, CI/CD, Grafana
+      </p>
+    ),
+  },
+  {
+    date: 'Mars 2021 - Novembre 2021',
+    location: 'Ascentia',
+    title: 'Concepteur de jeux et développeur Java JDK',
+    content: (
+      <p>
+        Au sein du plus gros serveur Minecraft français (4 millions d'utilisateurs enregistrés, 18 000 utilisateurs quotidiens), développement de nouvelles idées de jeux et contribution à la création d'un nouveau serveur. Collaboration avec les équipes de développement pour améliorer l'expérience utilisateur. Aide à la création de mini-jeux PoC en Java.
+        <br />
+        <br />
+        <strong>Environnement technique:</strong> Java, Jenkins, Docker, Kubernetes, Terraform, Git
+      </p>
+    ),
+  },
+  {
+    date: 'Mars 2020 - Décembre 2020',
+    location: 'Letsplay.cloud',
+    title: 'Lead full-stack et DevOps',
+    content: (
+      <p>
+        Estimation et développement d'un nouveau site web à partir de zéro. Reproduction des maquettes web et mobiles. Hébergement du site via AWS serverless. Création d'une pipeline CI/CD et d'une structure backend. Livraison d'une documentation de projet adaptée aux futurs développeurs.
+        <br />
+        <br />
+        <strong>Environnement technique:</strong> Figma, React.JS, Node.js, AWS serverless / lambda / pipeline / SAM, Pipeline Gitlab
       </p>
     ),
   },
 ];
-
-/**
- * Testimonial section
- */
-export const testimonial: TestimonialSection = {
-  imageSrc: testimonialImage,
-  testimonials: [
-    {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
-    },
-    {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
-    },
-    {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
-    },
-  ],
-};
-
 /**
  * Contact section
  */
@@ -349,11 +329,6 @@ export const contact: ContactSection = {
       href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
     },
     {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
-    },
-    {
       type: ContactType.Github,
       text: 'tbakerx',
       href: 'https://github.com/tbakerx',
@@ -365,9 +340,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/Sentrance'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/pierrepeixoto/'}
 ];

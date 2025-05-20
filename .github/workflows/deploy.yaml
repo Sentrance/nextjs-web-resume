@@ -1,0 +1,37 @@
+name: Deploy to OVH Hosting
+
+on:
+  push:
+    branches:
+      - main  # or master, depending on your main branch name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build Next.js static site
+        run: |
+          # Update next.config.js to use static export
+          echo "Configuring Next.js for static export"
+          yarn build
+
+      - name: Deploy to OVH hosting
+        uses: pitscher/ovh-deploy-hosting-action@v1
+        env:
+          OVH_HOSTING_USER: ${{ secrets.OVH_HOSTING_USER }}
+          OVH_HOSTING_PASSWORD: ${{ secrets.OVH_HOSTING_PASSWORD }}
+          OVH_HOSTING_DOMAIN: ${{ secrets.OVH_HOSTING_DOMAIN }}
