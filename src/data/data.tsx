@@ -56,9 +56,9 @@ export const heroData: Hero = {
         Ingénieur <strong className="text-stone-100">DevOps</strong> à <strong className="text-stone-100">forte polyvalence</strong> technique vivant actuellement sur Paris.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        Bilingue en anglais après plus de deux ans passée en Corée du Sud, j'adore voyager.
-        Sur mon temps libre je développe de petits projets personnels.
-        Sur  mon temps libre j'adore lire des manwha, les jeux-vidéos et sociabiliser.
+        Bilingue en anglais après plus de deux ans passée en Corée du Sud, j'adore voyager. Sur mon temps libre, j'aime
+        développer des projets personnels tels que des concepts de jeux-vidéos ou des outils pour me faciliter la vie.
+        En-dehors de l'aspect développeur, j'ai pour passions la lecture de manwha, les jeux-vidéos et suis amateur d'escalade.
       </p>
     </>
   ),
