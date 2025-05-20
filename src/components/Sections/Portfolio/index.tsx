@@ -56,7 +56,8 @@ const Portfolio: FC = memo(() => {
                   fill
                   src={item.imageSrc}
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-3">
                   <span className="text-white text-lg font-medium">{item.title}</span>
                 </div>
               </div>

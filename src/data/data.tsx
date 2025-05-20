@@ -147,10 +147,10 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'AWS / GCP / Azure',
-        level: 7,
+        level: 8,
       },
       {
-        name: 'CI/CD (Jenkins, GitLab, Bamboo)',
+        name: 'CI/CD',
         level: 8,
       },
     ],
@@ -163,16 +163,16 @@ export const skills: SkillGroup[] = [
         level: 8,
       },
       {
+        name: 'React.js / Node.js',
+        level: 8,
+      },
+      {
         name: 'Python',
         level: 7,
       },
       {
         name: 'C / C++ / C#',
         level: 7,
-      },
-      {
-        name: 'React.js / Node.js',
-        level: 8,
       },
       {
         name: 'GraphQL / NoSQL',
@@ -188,20 +188,20 @@ export const skills: SkillGroup[] = [
     name: 'Compétences sociales',
     skills: [
       {
-        name: 'Gestion de projet',
-        level: 8,
-      },
-      {
         name: 'Méthodologie agile',
         level: 9,
       },
       {
-        name: 'Parler en public',
-        level: 7,
+        name: 'Gestion de projet',
+        level: 8,
       },
       {
         name: 'Assistance client',
         level: 8,
+      },
+      {
+        name: 'Parler en public',
+        level: 7,
       },
     ],
   },
